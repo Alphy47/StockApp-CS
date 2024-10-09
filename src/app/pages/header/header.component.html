@@ -1,0 +1,54 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg  fixed-top" >
+
+    <!-- <a class="navbar-brand" href="#" style="margin-left: 10px;">Basilur Tea</a> -->
+    <div class="imgBx" >
+      <img src="../../../assets/logo.png" style="height: 60px; width: 100px; transition: ease-in;">
+      <!-- ./assets/logo.png -->
+  </div>
+    <button class="navbar-toggler" 
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#navbarText" 
+            aria-controls="navbarText" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- navigation links -->
+
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class=" mr-auto">
+        <li style="margin-left: 10px;">
+          <a class="nav-link" href="/BasilurStockAppNew/#/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+        </li> 
+        <li style="margin-left: auto;">
+          <a class="nav-link" href="/BasilurStockAppNew/#/excelupload">Excel Upload<span class="sr-only"> </span></a>
+        </li>
+        <li style="margin-left: auto;">
+          <a class="nav-link" href="/BasilurStockAppNew/#/userhandle">User Handle<span class="sr-only"> </span></a>
+        </li>
+
+        
+
+         
+      </ul>
+      <!-- showing user profile and selected date details -->
+      <form class="form-inline my-2 my-lg-0">
+        <p style="color: white; 
+                  font-size: 20px ;
+                  margin-left: 30px; 
+                  margin-right: 10px; 
+                  padding-top:15px">Logged in as &nbsp;<span style="color: #ce4f20;">{{group}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{createdDate}}</p>
+        <button class="btn-logout" 
+                style="margin-right: 20px;" 
+                type="submit"
+                (click)="logout()">
+              
+                Log Out
+              
+        </button>
+      </form>
+     
+    </div>
+  </nav>

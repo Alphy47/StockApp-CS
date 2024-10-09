@@ -1,0 +1,105 @@
+<app-header></app-header>
+ 
+<div class="row" style="margin: 30px; margin-top: 80px;">
+  <div class="col-md-6">
+    <div style="position:relative; ">
+      <form #uploadForm="ngForm">
+      <div  class="container" 
+            style="position: relative; margin-top: 20px; height: 300px; width:auto">
+        <div>
+          <div class="button-wrap">
+      
+            <div style="position: relative;">
+              <input id="fileInput" 
+                    class="file-input start-50 translate-middle"
+                    style="top: calc(75% + 60px); text-align: center;"
+                    type="file" 
+                    multiple="false"  
+                    #fileInput
+                    (change)="upload()"/>
+            </div>
+            <div style="position: absolute; top: calc(20% + 110px); left: 50%; transform: translate(-50%, -50%);">
+              <label class="button" 
+                      for="fileInput" 
+                      style="position: relative; width: auto; padding-left: 10px; padding-right: 10px;">Choose Excel File</label>
+            </div>
+          </div>
+        </div>
+        <div style="position: absolute; top: calc(35% + 50px); left: 50%; transform: translate(-50%, -50%);">
+          <input type="text" 
+                  class="remark" 
+                  name="remark" 
+                  placeholder="Enter Your Remark Here" 
+                  ngModel
+                  #remarkInput="ngModel" 
+                  required 
+              >
+        </div>
+
+        <div  style="position: absolute; top: calc(50% + 50px); left: 50%; transform: translate(-50%, -50%);">
+            <button class="btn " 
+                  style="width: auto; padding-left: 60px; padding-right: 60px;"
+                  type="button" 
+                  [disabled]="((ret.data || uploadForm.invalid) || (remarkInput.valid && uploadForm.invalid))" 
+                  
+                  (click)="savetodatabase()" >Upload
+              </button>
+        </div>
+        <div class="loader" 
+              role="status" 
+              *ngIf="issearch" style="position: relative; top: calc(25% + 50px); left: calc(65%);">
+            <span class="sr-only">Loading...</span>
+        </div>
+
+        <div style="position: absolute; top: calc(45% + 50px); left: 50%; transform: translate(-50%, 70%);">
+            <button class="btnExcel rounded"   
+                  type="submit"  
+                  [disabled]="ret.data"
+                  (click)="downloadExcelTemplate()">
+                  Click here to Download Empty 
+              <span class="spn-txt">Excel</span> Template
+            </button>
+        </div>
+      
+      </div>
+      </form>
+      <div>
+          <h5 *ngIf="ret.data">{{ret.data}}</h5>
+          <h5 *ngIf="ret1.data">{{ret1.data}}</h5>
+      </div>
+        
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="row" style="margin-top:30px; justify-content: center;">
+      <div>
+          <h3 style="text-align: center; font-weight: 700; margin-bottom: 20px;">Excel Uploaded History</h3>
+      </div>
+      <div class="table-responsive" id="tableFixHead">
+          <table style="text-align: center;" class="table">
+            <thead class="tbl-head">
+              <tr>
+          
+                <th scope="col">Uploaded Date</th>
+                <th scope="col">Uploaded By</th>
+                <th scope="col">Remark</th>
+                <th scope="col">Row Count</th>
+                
+              </tr>
+            </thead>
+            <tbody *ngFor="let subLst of details ;let indexOfelement=index;">
+              <tr>
+                <td>{{ subLst.createdDate | date:'yyyy-MM-dd  HH:mm:ss' }}</td>
+                <td>{{ subLst.createdBy }}</td>
+                <td>{{ subLst.Remark}}</td>
+                <td style="text-align: center;">{{ subLst.row_count }}</td>
+              </tr>
+            </tbody>
+     
+          </table>
+      </div>
+  
+    </div>
+  </div>
+</div>

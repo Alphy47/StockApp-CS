@@ -1,0 +1,522 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+/*
+nav*/
+.md-toast.error {
+    background-color: red;
+}
+
+.md-toast.success {
+    background-color: green;
+}
+
+ul{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+#main{
+
+	width:100%;
+	height:100vh;
+	position: relative;
+}
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 5px 10px 30px rgba(0,0,0,0.08);
+	position: fixed;
+	padding: 10px;
+	background-color: #F6319A;
+	/*background: linear-gradient( to right, #9A78F9,white);*/
+	left: 0;
+	top: 0;
+	width:100%;
+	z-index: 1;
+	
+}
+
+
+
+.logo {
+	height:45px;
+}
+nav ul{
+	display: flex;
+}
+nav ul li a{
+	font-weight: bold;
+	font-family: sans-serif;
+	height:40px;
+	line-height: 43px;
+	margin: 3px;
+	padding: 0px 22px;
+	display: flex;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	font-weight: 500;
+	color:white;
+	letter-spacing: 1px;
+}
+.log{
+	color:white;
+	font-weight: bold;
+	font-size: 0.9rem;
+	font-family: sans-serif;
+	
+	letter-spacing: 1px;
+	
+}
+
+.log:hover{
+	
+	color: green;
+}
+nav ul li a:hover{
+
+	background-color: #9A78F9;
+	color:#FFFFFF;
+	box-shadow: 5px 10px 30px rgba(64,198,196,0.3);
+	transition: all ease 0.2s;
+}
+
+
+nav .menu-btn,
+.menu-icon{
+		display:none;
+	}
+
+
+
+
+
+
+@media(max-width:900px){
+.menu-icon{
+display:block;}
+	nav{
+		justify-content: space-between;
+		height: 65px;
+		padding: 0px 30px;
+	}
+
+
+
+
+
+	.logo img{
+		height:27px;
+	}
+	.menu{
+		display:none;
+		position:absolute;
+		top:65px;
+		left:0px;
+		background-color:#FFFFFF;
+		border-bottom:4px solid #1db096;
+		width:100%;
+		padding:0px;
+		margin:0px;
+	}
+	.menu li{
+		width:100%;
+	}
+	nav .menu li a{
+		width:100%;
+		height:40px;
+		justify-content: center;
+		align-items: center;
+		margin:0px;
+		padding: 25px;
+		color: black;
+		border:1px solid rgba(38,38,38,0.03);
+	}
+	nav .menu-icon{
+		cursor:pointer;
+		float:right;
+		padding:28px 20px;
+		position:relative;
+		user-select: none;
+	}
+	nav .menu-icon .nav-icon{
+		background-color:white;
+		display:block;
+		height:2px;
+		position:relative;
+		transition: background 0.2s ease-out;
+		width:18px;
+	}
+	nav .menu-icon .nav-icon:before,
+	nav .menu-icon .nav-icon:after{
+		background-color:white;
+		content:'';
+		display:block;
+		height:100%;
+		position:absolute;
+		transition:all ease-out 0.2s;
+		width:100%;
+	}
+	nav .menu-icon .nav-icon:before{
+		top:5px;
+	}
+	nav .menu-icon .nav-icon:after{
+		top:-5px;
+	}
+	nav .menu-btn:checked ~ .menu-icon .nav-icon{
+		background:transparent;
+	}
+	nav .menu-btn:checked ~ .menu-icon .nav-icon:before{
+		transform: rotate(-45deg);
+		top:0;
+	}
+	nav .menu-btn:checked ~ .menu-icon .nav-icon:after{
+		transform: rotate(45deg);
+		top:0;
+	}
+	nav .menu-btn{
+		display:none;
+	}
+	nav .menu-btn:checked ~ .menu{
+		display:block;
+	}
+}
+
+
+
+/*Navigation End*/
+
+
+/*whatsapp */
+
+/* for desktop */
+.whatsapp_float {
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+        font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+        z-index:100;
+}
+
+.whatsapp-icon {
+	margin-top:16px;
+}
+/* for mobile */
+@media screen and (max-width: 767px){
+     .whatsapp-icon {
+	 margin-top:10px;
+     }
+    .whatsapp_float {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 10px;
+        font-size: 22px;
+    }
+}
+
+
+
+
+
+section{
+	position: relative;
+	//min-height: 50vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+
+}
+
+section .container{
+	width: 800px;
+	height: 500px;
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 15px 50px rgba(0,0,0,1);
+}
+
+section .container .user{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+section .dropdown-text{
+	color: #eaeaea;
+}
+
+section .container .user .imgBx{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: 2s;
+	background: rgba(255, 255, 255, 0.8);
+
+}
+
+section .container .user .imgBx img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 2s;
+}
+
+section .container .user .formBx{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	transition: 2s;
+	
+}
+
+section .container .user .formBx form h2{
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;width: 100%;
+	margin-bottom: 10px;
+	color: #eaeaea;
+
+}
+
+section .fa{
+	color: #eaeaea;
+	font-size: 20px;
+}
+
+section .container .user .formBx form p{
+	font-weight: bold;
+}
+
+section .container .user .formBx form  input{
+	position: relative;
+	width: 100%;
+	padding: 16px;
+	background: rgba(255, 255, 255, 0.15);
+	color: #ffffff;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	font-weight: 14px;
+	letter-spacing: 1px;
+	font-weight: 300;
+	justify-items: right;
+}
+
+section .container .user .formBx form  .btn {
+	max-width: 400px;
+	top: 10px;
+	background: linear-gradient( to left, #75310c,#f57f1e);
+	color: #fff;
+	padding: 5px;
+	padding-left: 110px;
+	padding-right: 110px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0px;
+	transition: 0.5s, background-color 0.5s ease, color 0.5s ease;;
+
+	
+}
+//added hover option--
+section .container .user .formBx form .btn:hover {
+    background: linear-gradient( to left, #f57f1e, #75310c);
+	font-size: 18px;
+	transition: 0.5s;
+}
+
+
+section .container .user .formBx form .signup{
+	position: relative;
+	margin-top: 20px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	color: #555;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+
+section .container .user .formBx form .signup a{
+	text-decoration: none;
+	color: #555;
+	font-weight:500;
+	
+}
+section .warn{
+	color: red;
+	font-size: 12px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+section .error-container{
+	max-width: 250px;
+	
+}
+section .form-control-dropdown {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 10 12"><path d="M1.5 2l2.5 3 2.5-3h-5z" fill="white"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 4px top 50%;
+    size: 0px;
+    border: 1px solid #cccccc79;
+    border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #eaeaea;
+}
+section .options{
+	background-color: #FFFFFF;
+	color:rgb(0, 0, 0)
+}
+section .sign-head{
+	color: rgb(229, 229, 229);
+}
+
+
+/*form responsive*/
+
+@media(max-width: 991px){
+	section .container{
+	 
+		max-width: 400px;
+	}
+
+	section .container .imgBx{
+		display: none;
+	}
+
+	section .container .user .formBx form  input{
+		position: relative;
+		width: 100%;
+		padding: 16px;
+		background: rgb(000, 000, 000,0.1);
+		color: #000000;
+		border: none;
+		outline: none;
+		box-shadow: none;
+		font-weight: 14px;
+		letter-spacing: 1px;
+		font-weight: 300;
+		justify-items: right;
+	}
+
+	section .container  .user .formBx{
+		/*background: linear-gradient( to left, #9A78F9,#FF7482);*/
+		background-image: url(../../../assets/banner.jpg);
+		background-position: top right 39%;
+		background-size: cover;
+		object-fit: cover;
+		width: 100%;
+		transition: 3s;
+		
+	}
+
+	section .container  .user .formBx form h2{
+		color: rgb(75, 75, 75);
+	}
+	section .container  .user .formBx form .signup{
+		font-size: 10px;
+		color: rgb(0, 0, 0);
+		text-transform: none;
+	} 
+	section .container  .user .formBx .signup a{
+		font-size: 10px;
+		color: black;
+	} 
+	section .warn{
+		color: red;
+    	font-size: 12px;
+		font-weight: bold;
+    	margin-top: 5px;
+	}
+	section .error-container{
+		max-width: 300px;
+		margin-top: -1px;
+		border: 0;
+		border-radius: 6px;
+	}
+	section .fa{
+		font-size: 20px;
+		color: black;
+		background-color: rgba(255, 255, 255, 0.6);
+		border: 1px;
+		border-radius: 10px;
+	}
+
+
+
+	section .container  .user .formBx form .one {
+		color: white;
+	}
+
+	section .container  .user .formBx form .btn{
+		background: linear-gradient( to left, #f57f1e, #75310c);
+		box-shadow: 0 15px 50px rgba(0,0,0,0.3);	
+	}
+	section .container  .user .formBx form .btn:hover{
+		background: linear-gradient( to left, #75310c, #f57f1e);
+		box-shadow: 0 15px 50px rgba(0,0,0,0.3);	
+	}
+	input.ng.invalid, textarea.ng-invalid{
+		border: 2px solid red;
+	}	
+	section .container .form-control-dropdown {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 10 12"><path d="M1.5 2l2.5 3 2.5-3h-5z"/></svg>');
+		background-repeat: no-repeat;
+		background-position: right 4px top 50%;
+		size: 0px;
+		border: 1px solid #ffffff;
+		border-radius: 5px;
+		background-color: rgb(000, 000, 000,0.1);
+		transition: 1s;
+		color: #000000;
+	}
+	section .dropdown-text{
+		color: #000000;
+	}
+	section .options{
+		background-color: #FFFFFF;
+		color:rgb(0, 0, 0)
+	}
+}
+
+
+
+.base{
+	height: 100vh;
+	background-image: url(../../../assets/tee1.jpeg);
+	
+	background-position-y: center;
+	object-fit: cover;
+	
+}

@@ -1,0 +1,110 @@
+
+<section class="base">
+    
+    <div class="container" style="position: relative; ">
+        <div class="user signinBx">
+            <div class="imgBx" >
+                <!-- ./assets/logo.png -->
+                <img src="../../../assets/logo.png" 
+                
+                    style="height: auto; padding-top: 100px; transition: ease-in;">
+            </div>
+            <div class="formBx" style="width: 400px;">
+                <form novalidate class="formBOX ng-pristine ng-invalid ng-invalid-required" (ngSubmit)="signin()"
+                        style="width: 350px; height: 400px; background: rgba(0, 0, 0, 0); padding: 20px;padding-top: 30px;">
+                    <div style="margin-bottom: 40px;">
+                        <h2 class="sign-head">Sign In</h2>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="col-md-2" style="width: 5px; margin-right: 20px; margin-top: 5px">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <input type="text" 
+                                        class="form-control" 
+                                        ng-model="login.username" 
+                                        name="username" 
+                                        [(ngModel)]="username"
+                                        placeholder="Username" 
+                                        ng-required="true" 
+                                        required #usernameInput="ngModel"
+                                        >
+                                </div>
+                                <!-- error message for invalid or empty username -->
+                                <div class="row">
+                                    <div class="error-container">
+                                        <div *ngIf="(isSubmitted && usernameInput.invalid) || (isSubmitted && (usernameInput.dirty || usernameInput.touched))" class="warn">
+                                            {{errorMessage}}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="col-md-2" style="width: 5px; margin-right: 20px; margin-top: 5px">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <input type="password" 
+                                    class="form-control" 
+                                    ng-model="login.password" 
+                                    name="password" 
+                                    [(ngModel)]="password"
+                                    placeholder="Password" 
+                                    ng-required="true" 
+                                    required #passwordInput="ngModel">
+                                </div>
+
+                                <!-- error message for invalid or empty password -->
+                                <div class="row">
+                                    <div class="error-container">
+                                        <div *ngIf="(isSubmitted && passwordInput.invalid) || (passwordInput.dirty || passwordInput.touched)" class="warn">
+                                            {{errorMessage}}
+                                        </div>
+                                      
+                                    </div>
+                                </div>                        
+                            </div>                       
+                        </div>
+                    </div>
+
+                    <!--date selection-->
+                    <div >
+                        <div class="form-group row" style="margin: 10px; margin-top: 15px;">
+                            <label class="dropdown-text  col-form-label col-form-label-sm" style="width: 150px; font-style: oblique; font-weight: 600;">Select Date</label>
+                            <select  
+                                    name="selectedDate" 
+                                    class="form-control-dropdown" 
+                                    id="selectAction" 
+                                    style="width: 250px;"
+                                    [(ngModel)]="excelIdx" 
+                                    >
+                                    <option class="options" *ngFor="let date of dateOptions" [value]="date.excelIdx">{{ date.createdDate | date:'yyyy-MM-dd  HH:mm:ss'}} - {{date.Remark}}</option>
+                            </select>
+                        </div>
+                    </div> 
+
+                    <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block" >Login</button>
+                    </div> 
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</section>

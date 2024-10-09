@@ -1,0 +1,155 @@
+.container{
+    background: rgba(0, 0, 0, 0.3)
+    
+}
+
+.btnExcel{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    width: 250px;
+    height: 45px; 
+    margin-top: 5px;
+
+}
+.btnExcel:hover{
+    color: #333333;
+    transition: 0.7s;
+    font-weight: 450;
+}
+.spn-txt{
+    color:rgb(23, 41, 236);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+
+
+input[type=file]{
+    position: absolute;
+    
+    z-index: -1;
+    top: 10px;
+    left: 8px;
+    font-size: 17px;
+    color:#585858;
+    
+}
+.button-wrap {
+    position: relative;
+}
+.button {
+    display: inline-block;
+    justify-items: center;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #585858;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    width: 175px;
+    height: 35px;
+    margin-top: 10px;
+    transition: .3s;
+}
+.button:hover{
+    background-color: #848484;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 17px;
+    transition: 0.3s;
+}
+::file-selector-button {
+    display: none;
+  }
+
+.file-input input[type=file]{
+    margin:10px;
+    text-align: center;
+    justify-items: center;
+}
+
+.btn {
+    display: inline-block;
+    justify-items: center;
+    text-align: center;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #4735a9;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    width: 200px;
+    height: 40px;
+    transition: .3s;
+}
+.btn:hover{
+    background-color: #3b3ef9;
+    color: #ffffff;
+    font-weight: 650;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+//styles for table
+#tableFixHead { 
+    overflow: auto; 
+    max-height: 600px; 
+    width: 900px;
+}
+    
+#tableFixHead thead th { 
+    position: sticky; 
+    top: -1; 
+    z-index: 1; 
+    background-color: #a1a1a1;
+
+}
+
+
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 5px 9px; }
+th     { background:#eee; }
+
+.remark{
+    margin:10px;
+    text-align: center;
+    justify-items: center;
+    background: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font-weight: 500;
+    width: 250px;
+}
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 60px;
+    aspect-ratio: 4;
+    --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+    background: 
+      var(--_g) 0%   50%,
+      var(--_g) 50%  50%,
+      var(--_g) 100% 50%;
+    background-size: calc(100%/3) 100%;
+    animation: l7 1s infinite linear;
+  }
+  @keyframes l7 {
+      33%{background-size:calc(100%/3) 0%  ,calc(100%/3) 100%,calc(100%/3) 100%}
+      50%{background-size:calc(100%/3) 100%,calc(100%/3) 0%  ,calc(100%/3) 100%}
+      66%{background-size:calc(100%/3) 100%,calc(100%/3) 100%,calc(100%/3) 0%  }
+  }

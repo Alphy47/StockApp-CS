@@ -1,0 +1,78 @@
+<app-header></app-header>
+
+<div class="container" style="margin-top: 120px;">
+
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-md-6" style="justify-content: center;"> 
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label col-form-label-sm">UserName</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control form-control-sm row-3" id="Name" name="Name"
+                        autocomplete="off" required="required" [(ngModel)]="usr.username" data-toggle="modal"
+                        > 
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label col-form-label-sm">Password</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control form-control-sm row-3" id="Name" name="Name"
+                        autocomplete="off" required="required" [(ngModel)]="usr.password"  data-toggle="modal"
+                        > 
+                </div>
+            </div>
+            <div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label col-form-label-sm">Group</label>
+                <div class="col-sm-8">
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]="usr.rack">
+                        <option selected>Open this select menu</option>
+                        <option value="Group1">Group1</option>
+                        <option value="Group2">Group2</option>
+                        <option value="Group3">Group3</option>
+                        <option value="Group4">Group4</option>
+                        <option value="Group5">Group5</option>
+                        <option value="Group6">Group6</option>
+                        <option value="Group7">Group7</option>
+                        <option value="Group8">Group8</option>
+                        <option value="Group9">Group9</option>
+                        <option value="Group10">Group10</option>
+                        <option value="StockM">StockManager</option>
+
+                      </select>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn" 
+                        type="submit" 
+                        (click)="savedata()"
+                        style="position: relative; top: calc(12% + 30px); left: 50%; transform: translate(-50%, -10%);">Save/Update
+                </button>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="table-responsive" id="tableFixHead">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">UserName</th>
+                        <th scope="col">Group</th> 
+                        <th scope="col"></th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let subLst of details ;let indexOfelement=index;">
+
+                        <td>{{subLst.UserName}}</td>
+                        <td> {{subLst.Userdetails1}}
+                        </td>  
+                        <td><i class="fa fa-pencil" style="color: blue; cursor: pointer;"  
+                                data-toggle="modal" data-target="#exampleModalCenter" aria-hidden="true" (click)="update(subLst)"></i></td>  
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div> 
+</div>
